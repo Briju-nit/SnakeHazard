@@ -1,1 +1,0 @@
-# SnakeHazard.github.io
