@@ -1,0 +1,178 @@
+/* Import Google font */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: url('assets/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.wrapper {
+  width: 100vmin;
+  height: 100vmin;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.game-details {
+  color: white;
+  font-weight: bold;
+  font-size: 0.85rem;
+  padding: 20px 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.game-details span {
+  background-color: black;
+  padding: 6px 12px;
+  border-radius: 5px;
+  margin: 0 4px;
+  border: 1px solid white;
+}
+
+.play-board {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  background-color: rgb(160, 228, 187);
+  grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+  border-radius: 10px;
+  border: 5px solid black;
+  position: relative;
+}
+
+.play-board .food {
+  border-radius: 50%;
+  background-color: red;
+  transform: scale(1.0);
+  grid-area: var(--foodY) / var(--foodX);
+}
+
+.play-board .head {
+  border-radius: 7px;
+  background-color: green;
+  grid-area: var(--snakeY) / var(--snakeX);
+  transform: scale(1.4);
+}
+
+.controls {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0;
+}
+
+.controls i {
+  width: 40px;
+  height: 40px;
+  background: black;
+  color: white;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 1px solid white;
+}
+
+.controls i:active {
+  opacity: 0.7;
+  transform: scale(0.97);
+}
+
+.game-over {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  font-size: 10px;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  display: none;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Add this to the existing CSS file */
+.restart-btn {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border: 1px solid white;
+  font-weight: bold;
+}
+
+.restart-btn:hover {
+  background-color: #333;
+}
+
+.start-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border: 1px solid white;
+  font-weight: bold;
+}
+
+.start-btn:hover {
+  background-color: #333;
+}
+
+@media (max-width: 500px) {
+  .wrapper {
+    width: 95vmin;
+    height: 95vmin;
+  }
+
+  .controls i {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+
+  .game-details {
+    padding: 10px 15px;
+    font-size: 0.7rem;
+  }
+
+  .start-btn,
+  .restart-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
